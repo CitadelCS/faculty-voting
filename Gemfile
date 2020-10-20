@@ -32,7 +32,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.0'
-  gem 'capybara'
+  gem 'capybara', '~> 3.33'
   gem 'database_cleaner'
   gem 'selenium-webdriver'
 end
@@ -44,14 +44,21 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Provides a better error page for Rails and other Rack apps. Includes source code inspection, a live REPL and local/instance variable inspection for all stack frames.
   gem 'better_errors', '~> 2.8', '>= 2.8.3'
+  # A modern CSS framework based on Flexbox
   gem 'bulma-rails', '~> 0.9.0'
+  # Guard is a command line tool to easily handle events on file system modifications.
   gem 'guard', '~> 2.16', '>= 2.16.2'
+  # Guard::LiveReload automatically reloads your browser when 'view' files are modified.
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'capybara', '~> 3.33'
+  gem 'database_cleaner'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
