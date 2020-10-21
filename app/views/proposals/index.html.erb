@@ -12,6 +12,8 @@
       <td><%= proposal.text %></td>
       <td><%= link_to 'Show', proposal_path(proposal) %></td>
       <td><%= link_to 'Edit', edit_proposal_path(proposal) %></td>
+      <td><%= link_to 'Destroy', proposal_path(proposal),
+                    method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>
