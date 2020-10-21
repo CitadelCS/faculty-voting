@@ -3,6 +3,10 @@ class ProposalsController < ApplicationController
         
     end
     
+    def index
+      @proposals = Proposal.all
+    end
+    
     def show
       @proposal = Proposal.find(params[:id])
     end
