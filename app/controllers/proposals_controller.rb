@@ -3,6 +3,10 @@ class ProposalsController < ApplicationController
         
     end
     
+    def show
+      @proposal = Proposal.find(params[:id])
+    end
+    
     def create
       @proposal = Proposal.new(proposal_params)
  
