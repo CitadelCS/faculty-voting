@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ProjectFinal</title>
+    <title>Faculty Voting</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,8 +10,8 @@
   </head>
 
   <body>
-    <h1>Hello, Rails.</h1>
-    <%= link_to 'Proposals', controller: 'proposals' %>
+    <h1>Welcome to The Faculty Voting System!</h1>
+    <%= link_to '<button type="button">Proposals</button>'.html_safe, controller: 'proposals' %>
     <%= yield %>
   </body>
 </html>
