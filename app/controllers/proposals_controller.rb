@@ -1,6 +1,6 @@
 class ProposalsController < ApplicationController
     def new
-        
+      @proposal = Proposal.new  
     end
     
     def index
@@ -13,9 +13,12 @@ class ProposalsController < ApplicationController
     
     def create
       @proposal = Proposal.new(proposal_params)
- 
-      @proposal.save
-      redirect_to @proposal
+        
+        if @proposal.save
+          redirect_to @proposal
+        else
+          render 'new'
+        end
     end
  
     private
