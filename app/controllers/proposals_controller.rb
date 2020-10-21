@@ -4,6 +4,14 @@ class ProposalsController < ApplicationController
     end
     
     def create
-      render plain: params[:proposal].inspect
+      @proposal = Proposal.new(proposal_params)
+ 
+      @proposal.save
+      redirect_to @proposal
     end
+ 
+    private
+      def proposal_params
+        params.require(:proposal).permit(:title, :text)
+      end
 end
