@@ -1,0 +1,12 @@
+<p>
+  <strong>Title:</strong>
+  <%= @proposal.title %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @proposal.text %>
+</p>
+
+<%= link_to 'Back', proposals_path %>
+| <%= link_to 'Edit', edit_proposal_path(@proposal) %>
