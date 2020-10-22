@@ -31,6 +31,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Devise is a flexible authentication solution for Rails based on Warden.
 gem 'devise'
 
+# Simple authorization solution for Rails. All permissions are stored in a single location.
+gem 'cancan'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
