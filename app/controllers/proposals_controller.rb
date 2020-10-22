@@ -12,7 +12,8 @@ class ProposalsController < ApplicationController
     end
     
     def create
-      @proposal = Proposal.new(proposal_params)
+      @user = current_user
+      @proposal = @user.proposals.build(proposal_params)
         
         if @proposal.save
           redirect_to @proposal

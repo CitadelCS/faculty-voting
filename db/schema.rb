@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_22_200351) do
+ActiveRecord::Schema.define(version: 2020_10_22_205635) do
 
   create_table "proposals", force: :cascade do |t|
     t.string "title"
     t.text "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.integer "proposal_id"
   end
 
   create_table "users", force: :cascade do |t|
