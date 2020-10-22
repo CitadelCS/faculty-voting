@@ -1,4 +1,5 @@
 <h1>Listing Proposals</h1>
+<%= flash[:alert] %>
 
 <table>
   <tr>
@@ -11,9 +12,13 @@
       <td><%= proposal.title %></td>
       <td><%= proposal.text %></td>
       <td><%= link_to 'Show', proposal_path(proposal) %></td>
+      <% if can? :update, proposal %>
       <td><%= link_to 'Edit', edit_proposal_path(proposal) %></td>
-      <td><%= link_to 'Destroy', proposal_path(proposal),
+      <% end %>
+      <% if can? :destroy, proposal %>
+      <td><%= link_to 'Delete', proposal_path(proposal),
                     method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>
