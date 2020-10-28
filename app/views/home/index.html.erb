@@ -1,0 +1,26 @@
+<% if user_signed_in? %> 
+  <head>
+    <title>Home - Faculty Voting</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <h1>Home</h1>
+  <br>
+  <a href="<%= proposals_path %>">Proposals</a>
+  <p></p>
+<% else %>
+  <head>
+    <title>Access Denied</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <h1><b>Access denied!</b></h1>
+
+<% end %>
+

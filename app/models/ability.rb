@@ -18,7 +18,11 @@ class Ability
             proposal.user == user
         end
             
-        can :create, Proposal
+        can :create, Proposal do |proposal|
+            proposal.user == user
+        end
+        
+
         
     end  
       
