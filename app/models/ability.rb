@@ -17,10 +17,6 @@ class Ability
         can :destroy, Proposal do |proposal|
             proposal.user == user
         end
-            
-        can :create, Proposal do |proposal|
-            proposal.user == user
-        end
         
 
         

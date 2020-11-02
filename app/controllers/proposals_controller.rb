@@ -9,7 +9,6 @@ class ProposalsController < ApplicationController
     
     def show
       @proposal = Proposal.find(params[:id])
-      authorize! :update, @proposal
     end
     
     def create
