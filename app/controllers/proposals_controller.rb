@@ -1,6 +1,6 @@
 class ProposalsController < ApplicationController
     def new
-      @proposal = Proposal.new  
+      @proposal = Proposal.new
     end
     
     def index
@@ -12,7 +12,8 @@ class ProposalsController < ApplicationController
     end
     
     def create
-      @proposal = Proposal.new(proposal_params)
+      @user = current_user
+      @proposal = @user.proposals.build(proposal_params)
         
         if @proposal.save
           redirect_to @proposal
@@ -23,6 +24,7 @@ class ProposalsController < ApplicationController
     
     def edit
       @proposal = Proposal.find(params[:id])
+      authorize! :update, @proposal
     end
     
     def update
@@ -37,6 +39,7 @@ class ProposalsController < ApplicationController
     
     def destroy
       @proposal = Proposal.find(params[:id])
+      authoize! :update, @proposal
       @proposal.destroy
  
       redirect_to proposals_path

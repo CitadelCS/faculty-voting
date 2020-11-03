@@ -1,5 +1,13 @@
-<h1>New Proposal</h1>
+<% if user_signed_in? %> 
 
-<%= render 'form' %>
+  <h1>New Proposal</h1>
 
-<%= link_to 'Back', proposals_path %>
+  <%= render 'form' %>
+
+  <%= link_to 'Back', proposals_path %>
+
+<% else %> 
+
+  <h1><b>Access denied! You must sign in to create a proposal.</b></h1>
+
+<% end %> 

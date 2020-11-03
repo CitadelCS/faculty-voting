@@ -8,5 +8,15 @@
   <%= @proposal.text %>
 </p>
 
+<p>
+  <strong>Created:</strong>
+    <%= time_ago_in_words(@proposal.created_at) %> ago
+</p>
+
+<p>
+  <strong>Author:</strong>
+    <%= @proposal.user.email %>
+</p>
+
 <%= link_to 'Back', proposals_path %>
 | <%= link_to 'Edit', edit_proposal_path(@proposal) %>
