@@ -1,5 +1,9 @@
 <% if user_signed_in? %> 
+
 <%= render 'navbar' %>
+
+
+
 <h1>Listing Proposals</h1>
 <%= flash[:alert] %>
 
@@ -27,9 +31,3 @@
 
 <%= link_to 'Home', welcome_index_path %>
 | <%= link_to 'New Proposal', "new_proposal" %>
-
-<% else %> 
-
-  <h1><b>Access denied! You must sign to view proposals.</b></h1>
-
-<% end %> 

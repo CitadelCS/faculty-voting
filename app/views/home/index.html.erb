@@ -1,5 +1,9 @@
+
 <% if user_signed_in? %> 
 <%= render 'navbar' %>
+
+</html>
+
   <head>
     <title>Home - Faculty Voting</title>
     <%= csrf_meta_tags %>
@@ -8,18 +12,6 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  
-<% else %>
-  <head>
-    <title>Access Denied</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <h1><b>Access denied!</b></h1>
-<% end %>
 
 
 
