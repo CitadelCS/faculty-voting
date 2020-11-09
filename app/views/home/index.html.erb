@@ -9,7 +9,10 @@
   </head>
   <h1>Home</h1>
   <br>
-  <a href="<%= proposals_path %>">Proposals</a>
+  <%= link_to 'Home', welcome_index_path %>
+  | <a href="<%= proposals_path %>">Proposals</a>
+  | <a href="<%= roles_path %>">Roles</a>
+  | <a href="<%= prog_users_path %>">Prog_users</a>
   <p></p>
 <% else %>
   <head>
