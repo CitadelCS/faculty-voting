@@ -18,5 +18,17 @@
     <%= @proposal.user.email %>
 </p>
 
+<br>
+<p>Agree?</p>
+<%= link_to like_proposal_path(@proposal), method: :put do %>
+  Yes
+  <%= @proposal.get_upvotes.size %>
+<% end %>
+<br>
+<%= link_to dislike_proposal_path(@proposal), method: :put do %>
+  No
+  <%= @proposal.get_downvotes.size %>
+<% end %>
+<br>
 <%= link_to 'Back', proposals_path %>
 | <%= link_to 'Edit', edit_proposal_path(@proposal) %>
