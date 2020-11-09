@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :roles
   get 'home/index'
   get 'welcome/index'
+  get 'proposals/archive'
+  get 'proposals/active'
+
   root 'welcome#index'
     
   devise_for :users

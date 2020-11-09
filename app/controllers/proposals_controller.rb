@@ -29,9 +29,15 @@ class ProposalsController < ApplicationController
       getProposals
     end
     
+    def archive
+      @proposals = Proposal.all
+    end
+    
     def show
       @proposal = Proposal.find(params[:id])
     end
+    
+   
     
     def create
       @user = current_user

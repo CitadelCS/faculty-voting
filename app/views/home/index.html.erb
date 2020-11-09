@@ -1,3 +1,4 @@
+
 <% if user_signed_in? %> 
   <head>
     <title>Home - Faculty Voting</title>
@@ -26,4 +27,19 @@
   <h1><b>Access denied!</b></h1>
 
 <% end %>
+
+
+<%= render 'navbar' %>
+
+
+<head>
+  <title>Home - Faculty Voting</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>   
+
+
 
