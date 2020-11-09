@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2020_10_22_205635) do
   create_table "proposals", force: :cascade do |t|
     t.string "title"
     t.text "text"
+    t.integer "active", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
