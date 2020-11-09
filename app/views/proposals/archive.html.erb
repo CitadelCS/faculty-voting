@@ -1,1 +1,37 @@
-<h1> THO </h1>
+<%= render 'navbar' %>
+
+<% if user_signed_in? %> 
+
+<h1>Listing Proposals</h1>
+<%= flash[:alert] %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+ 
+  <% @proposals.each do |proposal| %>
+    <tr>
+      <td><%= proposal.title %></td>
+      <td><%= proposal.text %></td>
+      <td><%= link_to 'Show', proposal_path(proposal) %></td>
+      <% if can? :update, proposal %>
+      <td><%= link_to 'Edit', edit_proposal_path(proposal) %></td>
+      <% end %>
+      <% if can? :destroy, proposal %>
+      <td><%= link_to 'Delete', proposal_path(proposal),
+                    method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Home', welcome_index_path %>
+| <%= link_to 'New Proposal', "new_proposal" %>
+
+<% else %> 
+
+  <h1><b>Access denied! You must sign to view proposals.</b></h1>
+
+<% end %> 

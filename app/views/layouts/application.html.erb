@@ -1,42 +1,5 @@
 <!DOCTYPE html>
-<html>
-    
-   
-<style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333333;
-}
 
-li {
-   float: left; 
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 16px;
-  text-decoration: none;
-}
-
-li a:hover {
-   background-color: #111111;
-}
-</style>
-<body>
-<ul>
-  <li> <a href="<%= new_proposal_path %>">Create Proposals</a></li>
-  <li> <a href="/proposals">Active Proposals</a></li>
-  <li> <a href="/proposals">Archived Proposals</a></li>
-  <li> <a href="#settingsPage">Settings</a></li>
-</ul>
-    
-
-</body>
   <head>
     <title>Faculty Voting</title>
     <%= csrf_meta_tags %>
