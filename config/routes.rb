@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :prog_users
+  resources :roles
   get 'home/index'
   get 'welcome/index'
   root 'welcome#index'

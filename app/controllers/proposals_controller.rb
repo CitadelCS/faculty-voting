@@ -1,10 +1,32 @@
 class ProposalsController < ApplicationController
+
+    def getRoles
+      if current_user.role.isMultiRole?
+        @roles = Role.where("is_multi_role = 0")
+      else
+        @roles = Role.where("id = ?", current_user.role.id)
+      end
+
+      @roles
+    end
+
+    def getProposals
+      if current_user.role.isMultiRole?
+        @proposals = Proposal.all
+      else
+        @proposals = Proposal.where("role_id = ?", current_user.role.id)
+      end
+
+      @proposals
+    end
+
     def new
+      getRoles
       @proposal = Proposal.new
     end
     
     def index
-      @proposals = Proposal.all
+      getProposals
     end
     
     def show
@@ -14,8 +36,9 @@ class ProposalsController < ApplicationController
     def create
       @user = current_user
       @proposal = @user.proposals.build(proposal_params)
-        
-        if @proposal.save
+      getRoles
+
+      if @proposal.save
           redirect_to @proposal
         else
           render 'new'
@@ -24,6 +47,7 @@ class ProposalsController < ApplicationController
     
     def edit
       @proposal = Proposal.find(params[:id])
+      getRoles
       authorize! :update, @proposal
     end
     
@@ -47,6 +71,6 @@ class ProposalsController < ApplicationController
  
     private
       def proposal_params
-        params.require(:proposal).permit(:title, :text)
+        params.require(:proposal).permit(:title, :text, :group_type, :role_id)
       end
 end
