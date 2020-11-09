@@ -18,11 +18,13 @@ class ProposalsController < ApplicationController
     def upvote
       @proposal = Proposal.find(params[:id])
       @proposal.upvote_by current_user
+      redirect_to proposal_path(@proposal)
     end
     
     def downvote
       @proposal = Proposal.find(params[:id])
       @proposal.downvote_by current_user
+      redirect_to proposal_path(@proposal)
     end
     
     def create
