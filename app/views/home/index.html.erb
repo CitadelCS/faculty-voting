@@ -1,42 +1,3 @@
-<% if user_signed_in? %> 
-<html>
-   
-<style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333333;
-}
-
-li {
-   float: left; 
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 16px;
-  text-decoration: none;
-}
-
-li a:hover {
-   background-color: #111111;
-}
-</style>
-<body>
-<ul>
-  <li> <a href="<%= new_proposal_path %>">Create Proposals</a></li>
-  <li> <a href="/proposals">Active Proposals</a></li>
-  <li> <a href="/proposals/archive">Archived Proposals</a></li>
-  <li> <a href="#settingsPage">Settings</a></li>
-</ul>
-    
-
-</body>
-
 </html>
   <head>
     <title>Home - Faculty Voting</title>
@@ -46,18 +7,6 @@ li a:hover {
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  
-<% else %>
-  <head>
-    <title>Access Denied</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <h1><b>Access denied!</b></h1>
-<% end %>
 
 
 

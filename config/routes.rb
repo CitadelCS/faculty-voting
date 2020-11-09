@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
   get 'proposals/archive'
   get 'proposals/active'
+
   root 'welcome#index'
     
   devise_for :users
