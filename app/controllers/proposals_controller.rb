@@ -7,6 +7,10 @@ class ProposalsController < ApplicationController
       @proposals = Proposal.all
     end
     
+    def archive
+      @proposals = Proposal.all
+    end
+    
     def show
       @proposal = Proposal.find(params[:id])
     end
