@@ -9,13 +9,15 @@
   <tr>
     <th>Title</th>
     <th>Text</th>
+    <th>Group Type</th>
   </tr>
  
   <% @proposals.each do |proposal| %>
     <tr>
       <td><%= proposal.title %></td>
       <td><%= proposal.text %></td>
-      <td><%= link_to 'Show', proposal_path(proposal) %></td>
+       <td><%= proposal.role.name %></td>
+     <td><%= link_to 'Show', proposal_path(proposal) %></td>
       <% if can? :update, proposal %>
       <td><%= link_to 'Edit', edit_proposal_path(proposal) %></td>
       <% end %>
