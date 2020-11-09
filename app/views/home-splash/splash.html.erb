@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>Home-Splash</title>
+   <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+    <h1>Home</h1>
+  <br>
+  <a href="<%= proposals_path %>">Proposals</a>
+  <p></p>
+<% else %>
+  <head>
+    <title>Access Denied</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <h1><b>Access denied!</b></h1>
+    
+<style>
+ul {
+  <%= list-style-type: none %>
+  <%= margin: 0 %>
+  <%= padding: 0 %>
+  <%= overflow: hidden %>
+  <%= background-color: #333333 %>
+}
+
+li {
+  <%= float: left; %>
+}
+
+li a {
+  <%= display: block %>
+  <%= color: white %>
+  <%= text-align: center %>
+  <%= padding: 16px; %>
+  <%= text-decoration: none %>
+}
+
+li a:hover {
+  <%= background-color: #111111 %>
+}
+</style>
+<body>
+
+<ul>
+  <li><%= <a href="#homePage">Proposals</a> %></li>
+  <li><%= <a href="#cProposals">Create Proposal</a> %></li>
+  <li><%= <a href="#acProposals">Active Proposals</a> %></li>
+  <li><%= <a href="#arProposals">Archived Proposals</a> %></li>
+  <li><%= <a href="#settingsPage">Settings</a> %></li>
+</ul>
+
+</body>
+</html>

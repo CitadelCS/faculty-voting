@@ -11,6 +11,8 @@ class ProposalsController < ApplicationController
       @proposal = Proposal.find(params[:id])
     end
     
+   
+    
     def create
       @user = current_user
       @proposal = @user.proposals.build(proposal_params)
