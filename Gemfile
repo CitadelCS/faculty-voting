@@ -63,12 +63,19 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
+  gem 'simplecov', :require => false
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara', '~> 3.33'
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'cucumber-rails', require: false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+  gem "cucumber-rails-training-wheels"
+
+
 end
 
 group :production do
