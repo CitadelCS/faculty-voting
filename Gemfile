@@ -34,6 +34,9 @@ gem 'devise'
 # Simple authorization solution for Rails. All permissions are stored in a single location.
 gem 'cancan'
 
+# Rails gem to allowing records to be votable
+gem 'acts_as_votable'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -74,8 +77,7 @@ group :test do
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
   gem "cucumber-rails-training-wheels"
-
-
+  gem 'cucumber'
 end
 
 group :production do

@@ -1,5 +1,7 @@
-<% if user_signed_in? %> 
-  
+<%= render 'navbar' %>
+
+
+
 <h1>Listing Proposals</h1>
 <%= flash[:alert] %>
 
@@ -7,13 +9,15 @@
   <tr>
     <th>Title</th>
     <th>Text</th>
+    <th>Group Type</th>
   </tr>
  
   <% @proposals.each do |proposal| %>
     <tr>
       <td><%= proposal.title %></td>
       <td><%= proposal.text %></td>
-      <td><%= link_to 'Show', proposal_path(proposal) %></td>
+       <td><%= proposal.role.name %></td>
+     <td><%= link_to 'Show', proposal_path(proposal) %></td>
       <% if can? :update, proposal %>
       <td><%= link_to 'Edit', edit_proposal_path(proposal) %></td>
       <% end %>
@@ -27,9 +31,3 @@
 
 <%= link_to 'Home', welcome_index_path %>
 | <%= link_to 'New Proposal', "new_proposal" %>
-
-<% else %> 
-
-  <h1><b>Access denied! You must sign to view proposals.</b></h1>
-
-<% end %> 

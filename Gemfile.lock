@@ -56,6 +56,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
+    acts_as_votable (0.12.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     bcrypt (3.1.16)
@@ -174,9 +175,12 @@ GEM
       mimemagic (~> 0.3.2)
     method_source (1.0.0)
     middleware (0.1.0)
+<<<<<<< HEAD
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2020.1104)
+=======
+>>>>>>> 2a4544836436eaa511d8b7f2280863cc93b33605
     mimemagic (0.3.5)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
@@ -330,14 +334,19 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_votable
   better_errors (~> 2.8, >= 2.8.3)
   bootsnap (>= 1.4.2)
   bulma-rails (~> 0.9.0)
   byebug
   cancan
   capybara (~> 3.33)
+<<<<<<< HEAD
   cucumber-rails
   cucumber-rails-training-wheels
+=======
+  cucumber
+>>>>>>> 2a4544836436eaa511d8b7f2280863cc93b33605
   database_cleaner
   devise
   guard (~> 2.16, >= 2.16.2)
