@@ -2,20 +2,10 @@
 
 class DeviseCreateUsers < ActiveRecord::Migration[6.0]
   def change
-   #code from fenney
-   # create_table :prog_users do |t|
-     # t.integer :user_id
-    #  t.integer :role_id
-
-     # t.timestamps
-    #end of code
     create_table :users do |t|
       ## Admin?
       t.boolean :admin
-      t.integer :user_id
-      t.integer :role_id
-
-      t.timestamps
+      
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
