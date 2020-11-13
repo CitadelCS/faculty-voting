@@ -9,12 +9,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <h1>Home</h1>
-  <br>
-  <%= link_to 'Home', welcome_index_path %>
-  | <a href="<%= proposals_path %>">Proposals</a>
-  | <a href="<%= roles_path %>">Roles</a>
-  | <a href="<%= prog_users_path %>">Prog_users</a>
-  <p></p>
+  
 <% else %>
   <head>
     <title>Access Denied</title>
@@ -32,14 +27,6 @@
 <%= render 'navbar' %>
 
 
-<head>
-  <title>Home - Faculty Voting</title>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>   
 
 
 
