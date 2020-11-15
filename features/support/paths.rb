@@ -15,7 +15,17 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
+     when /^the Sign In\s?page$/
+        prog_users_path
+     when /^the Create New User page$/
+        new_prog_users_path
 
+     when/^the Welcome Screen$/
+        welcome_index_path
+        
+     when /^the new proposals page$/
+ 
+        
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
