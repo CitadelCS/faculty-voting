@@ -13,9 +13,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       ## Admin?
       t.boolean :admin
       t.integer :user_id
-      t.integer :role_id
 
-      t.timestamps
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
