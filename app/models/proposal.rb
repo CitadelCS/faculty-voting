@@ -4,4 +4,5 @@ class Proposal < ApplicationRecord
     belongs_to :role
     validates :title, presence: true,
                     length: { minimum: 5 }
+    validates :text, presence: true
 end
