@@ -1,11 +1,15 @@
-require 'rails_helper'
+require "rails_helper"
+require_relative "../support/devise"
 
 RSpec.describe HomeController, type: :controller do
+  describe "GET /" do
+    login_user
 
-  describe "GET #index" do
-    it "returns http success" do
-      get :index
-      expect(response).to have_http_status(:success)
+    context "from login user" do
+      it "should return 200:OK" do
+        get :index
+        expect(response).to have_http_status(:success)
+      end
     end
   end
 end
