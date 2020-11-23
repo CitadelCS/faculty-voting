@@ -1,42 +1,57 @@
 
 <html>
-   
-<style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333333;
-}
+    
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-li {
-   float: left; 
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 16px;
-  text-decoration: none;
-}
-
-li a:hover {
-   background-color: #111111;
-}
-</style>
+<script>
+    
+  .w3-teal, .w3-hover-teal:hover {
+      background-color: #1F3A60!important;
+  }
+    
+</script>
+    
+    
 <body>
-<ul>
-   <li><a href="<%= welcome_index_path %>">Home</a></li>
-  <li> <a href="<%= roles_path %>">Roles</a></li>
-  <li> <a href="<%= prog_users_path %>">Prog_users</a></li>
+    
+<!-- Sidebar -->    
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none;position: -webkit-sticky;
+  position: sticky; background-color: #3975B7;" id="mySidebar">
+  <button onclick="w3_close()" class="w3-bar-item w3-large" style="background-color: #1A3152!important; color:white;">Close &times;</button>
+  <a href="<%= welcome_index_path %>" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">HOME</a>
+  <a href="<%= roles_path %>" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">ROLES</a>
+  <a href="<%= prog_users_path %>" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">PROG USERS</a>
  
-  <li> <a href="<%= new_proposal_path %>">Create Proposals</a></li>
-  <li> <a href="/proposals">Active Proposals</a></li>
-  <li> <a href="/proposals/archive">Archived Proposals</a></li>
-  <li> <a href="#settingsPage">Settings</a></li>
-</ul>
+  <a href="<%= new_proposal_path %>" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">CREATE PROPOSALS</a>
+  <a href="/proposals" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">ACTIVE PROPOSALS</a>
+  <a href="/proposals/archive" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">ARCHIVED PROPOSALS</a>
+  <a href="#settingsPage" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">SETTINGS</a>
+</div>
+  
+<div id="main">
+    
+<div class="w3-teal" style="background-color: #1A3152!important;">
+  <button id="openNav" class="w3-button w3-teal w3-xlarge" style="background-color: #1A3152!important; padding-left: 2%; padding-bottom: 0px; font-weight: bold;color:white!important;" onclick="w3_open()">Menu</button>
+  <div class="w3-container">
+    <h1></h1>
+  </div>
+</div>
+    
+<script>
+function w3_open() {
+  document.getElementById("main").style.marginLeft = "10%";
+  document.getElementById("mySidebar").style.width = "10%";
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("openNav").style.display = 'none';
+}
+
+function w3_close() {
+  document.getElementById("main").style.marginLeft = "0%";
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("openNav").style.display = "inline-block";
+}
+</script>
     
 
 </body>
