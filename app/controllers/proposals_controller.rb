@@ -27,10 +27,11 @@ class ProposalsController < ApplicationController
     
     def index
       getProposals
+      @proposals = Proposal.where(:archived => "false")
     end
     
     def archive
-      @proposals = Proposal.all
+      @proposals = Proposal.where(:archived => "true")
     end
     
     def show
@@ -63,6 +64,7 @@ class ProposalsController < ApplicationController
     
     def edit
       @proposal = Proposal.find(params[:id])
+
       getRoles
       authorize! :update, @proposal
     end
@@ -87,6 +89,6 @@ class ProposalsController < ApplicationController
  
     private
       def proposal_params
-        params.require(:proposal).permit(:title, :text, :group_type, :role_id)
+        params.require(:proposal).permit(:title, :text, :group_type, :role_id, :archived, :live)
       end
 end
