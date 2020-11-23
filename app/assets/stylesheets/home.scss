@@ -1,3 +1,29 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home-logo-div {
+  text-align: center;
+  background-color: #1F3A60;
+  vertical-align: top;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.proposal-home-text {
+  padding-left: 40px;
+  color: #1A3152;
+}
+
+p.logout-msg a:hover {
+  background-color: #f2f2f2;
+}
+
+text.logout-text a:link{
+  color: black;
+    text-decoration:none; 
+}
+
+text.logout-text a:hover{
+  color:black; 
+}
