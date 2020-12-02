@@ -11,31 +11,25 @@ module NavigationHelpers
   # step definition in web_steps.rb
   #
   def path_to(page_name)
-    case page_name
-
-    when /^the home\s?page$/
-      '/'
-        
-     when /^the Sign In\s?page$/
-        new_user_session_path
-        
-    when /^the roles In\s?page$/
-            roles_path
-    
-    when /^the new roles In\s?page$/
-        new_role_path
-        
-            when /^the new proposal\s?page$/
-               new_proposal_path
-                when /^the home index\s?page$/
-                   home_index_path
-         
-                    when /^the signup\s?page$/
-                       new_user_registration_path
-        
-                         when /^the active\s?page$/
-                                    proposals_path
-        
+     case page_name
+        when /^the home\s?page$/
+              '/'  
+             when /^the Sign In\s?page$/ 
+                new_user_session_path                   #PATH TO THE SIGN IN PAGE
+                 when /^the roles In\s?page$/
+                    roles_path                              #PATH TO THE ROLES PAGE
+                        when /^the new roles In\s?page$/
+                            new_role_path                         #PATH TO THE NEW ROLE PAGE
+                                when /^the new proposal\s?page$/
+                                   new_proposal_path                   #PATH TO THE NEW PROPOSAL PAGE
+                                        when /^the home index\s?page$/
+                                           home_index_path                  #PATH TO THE HOME INDEX PAGE
+                                                when /^the signup\s?page$/
+                                                   new_user_registration_path    #PATH TO THE SIGN UP PAGE
+                                                         when /^the active\s?page$/
+                                                               proposals_path        #PATH TO THE PROPOSAL PAGE 
+                                                                when /^the archived\s?page$/
+                                                                    proposals_archive_path   #PATH T
     # when /^the Create New User\s?page$/
    #     new_prog_users_path
    # when /^the Create New Proposals page$/
