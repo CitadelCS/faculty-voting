@@ -2,7 +2,7 @@
 ruby-2.6.6
 Heroku link:  https://faculty-voting.herokuapp.com/
 Pivotal Tracker Link: https://www.pivotaltracker.com/n/projects/2471804
-CodeClimate: https://codeclimate.com/github/codeclimate/codeclimate
+CodeClimate: https://codeclimate.com/github/codeclimate/faculty-voting
 
 faculty-voting is a program desgined for mutiple users to make and vote in specified groups.
 
@@ -12,5 +12,5 @@ Program Dependencies: None
 
 
 
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/test_coverage"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage" /></a>
+<a href="https://codeclimate.com/github/codeclimate/faculty-voting/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
+<a href="https://codeclimate.com/github/codeclimate/faculty-voting/test_coverage"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage" /></a>
