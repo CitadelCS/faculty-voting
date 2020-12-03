@@ -1,6 +1,7 @@
 class ProposalsController < ApplicationController
-
+    
     def getRoles
+      #Check if user has multi-role.
       if current_user.role.isMultiRole?
         @roles = Role.where("is_multi_role = 0")
       else
@@ -11,6 +12,7 @@ class ProposalsController < ApplicationController
     end
 
     def getProposals
+      #Check if user has multi-role.
       if current_user.role.isMultiRole?
         @proposals = Proposal.all
       else
