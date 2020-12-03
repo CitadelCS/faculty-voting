@@ -604,6 +604,16 @@
           null
         ]
       },
+      "/home/codio/workspace/faculty-voting/app/models/prog_user.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/home/codio/workspace/faculty-voting/app/models/proposal.rb": {
         "lines": [
           1,
@@ -632,26 +642,6 @@
           null,
           null
         ]
-      },
-      "/home/codio/workspace/faculty-voting/app/channels/application_cable/channel.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/codio/workspace/faculty-voting/app/channels/application_cable/connection.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       },
       "/home/codio/workspace/faculty-voting/app/controllers/prog_users_controller.rb": {
         "lines": [
@@ -936,29 +926,6 @@
         "branches": {
         }
       },
-      "/home/codio/workspace/faculty-voting/app/jobs/application_job.rb": {
-        "lines": [
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/codio/workspace/faculty-voting/app/mailers/application_mailer.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/home/codio/workspace/faculty-voting/app/models/ability.rb": {
         "lines": [
           0,
@@ -1017,20 +984,8 @@
         ],
         "branches": {
         }
-      },
-      "/home/codio/workspace/faculty-voting/app/models/prog_user.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1607008398
+    "timestamp": 1607032250
   }
 }

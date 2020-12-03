@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.describe Proposal, type: :model do
   context 'validation tests' do
-    it 'ensures title presence' do
+    it do
       proposal = Proposal.new(text: 'This is a sample proposal.').save
       expect(proposal).to eq(false)
     end
