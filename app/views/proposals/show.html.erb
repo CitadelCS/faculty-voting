@@ -1,0 +1,71 @@
+<%= render 'navbar' %> 
+  <div class="home-logo-div">
+    <%= image_tag("proposal-banner.png",  :size => "325x108", :alt => "rss feed") %>
+  </div>
+    
+  <div class="proposal-home-text">
+    <h4 style="font-weight: bold;">Proposal System Home</h4>  
+  </div>
+    
+  <div>
+    <table style="color:black;background-color:#f2f2f2;width:100%;">
+      <tbody>
+        <tr>
+          <td>
+            <p>Welcome <%= current_user.email %></p>
+          </td>
+          <td>
+            <p align="right" class="logout-msg">
+              <a id="logout" style="text-decoration:none;color:black;:hover:#fff;" href="#">
+                  <%= link_to image_tag("logout_roll.gif",  :size => "39x26", :alt => "rss feed2"), destroy_user_session_path, method: :delete %> 
+                  <br>
+                  <text class="logout-text" style="color:black;"><%= link_to "Logout", destroy_user_session_path, method: :delete %></text>
+              </a>
+            </p>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+<p>
+  <strong>Title:</strong>
+  <%= @proposal.title %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @proposal.text %>
+</p>
+ 
+<p>
+    <strong>Group Type:</strong>
+    <%= @proposal.role.name %>
+</p>
+ 
+
+<p>
+  <strong>Created:</strong>
+    <%= time_ago_in_words(@proposal.created_at) %> ago
+</p>
+
+<p>
+  <strong>Author:</strong>
+    <%= @proposal.user.email %>
+</p>
+
+<br>
+<p>Agree?</p>
+<%= link_to like_proposal_path(@proposal), method: :put do %>
+  Yes
+  <%= @proposal.get_upvotes.size %>
+<% end %>
+<br>
+<%= link_to dislike_proposal_path(@proposal), method: :put do %>
+  No
+  <%= @proposal.get_downvotes.size %>
+<% end %>
+<br>
+<%= link_to 'Back', proposals_path %>
+| <%= link_to 'Edit', edit_proposal_path(@proposal) %>

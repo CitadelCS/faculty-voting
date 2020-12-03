@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<style>
+      
+  div#login-message {
+    float: right; 
+    padding: 10px;
+  } 
+      
+  .dropbtn {
+    background-color: #1A3152;
+    color: white;
+    display: inline-block;
+    font-size: 16px;
+    border: none;
+    border-radius: 0 0 0 5px;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+   }
+
+   .dropdown-content a:hover {background-color: #ddd;}
+
+   .dropdown:hover .dropdown-content {display: block;}
+
+   .dropdown:hover .dropbtn {background-color: #ccc;}
+  
+</style>
+
+  <head>
+    <title>Faculty Voting</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+      
+    <div id="login-message" style="color: #FFF;">
+      <% if user_signed_in? %>
+      <div class="dropdown">
+        <button class="dropbtn"><%= current_user.email %></button>
+        <div class="dropdown-content">
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        </div>
+      </div>
+      <% else %>
+          <%= link_to "Sign In", new_user_session_path %>
+        <% end %>  
+    </div>
+      
+    <%= yield %>
+  </body>
+</html>
+

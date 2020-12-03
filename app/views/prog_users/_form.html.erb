@@ -1,0 +1,27 @@
+<%= form_with(model: prog_user, local: true) do |form| %>
+  <% if prog_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(prog_user.errors.count, "error") %> prohibited this prog_user from being saved:</h2>
+
+      <ul>
+        <% prog_user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :User %>
+    <%= form.collection_select :user_id, @users, :id, :email, prompt: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Role %>
+    <%= form.collection_select :role_id, @roles, :id, :name, prompt: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,62 @@
+<%= render 'navbar' %> 
+  <div class="home-logo-div">
+    <%= image_tag("proposal-banner.png",  :size => "325x108", :alt => "rss feed") %>
+  </div>
+    
+  <div class="proposal-home-text">
+    <h4 style="font-weight: bold;">Proposal System Home</h4>  
+  </div>
+    
+  <div>
+    <table style="color:black;background-color:#f2f2f2;width:100%;">
+      <tbody>
+        <tr>
+          <td>
+            <p>Welcome <%= current_user.email %></p>
+          </td>
+          <td>
+            <p align="right" class="logout-msg">
+              <a id="logout" style="text-decoration:none;color:black;:hover:#fff;" href="#">
+                  <%= link_to image_tag("logout_roll.gif",  :size => "39x26", :alt => "rss feed2"), destroy_user_session_path, method: :delete %> 
+                  <br>
+                  <text class="logout-text" style="color:black;"><%= link_to "Logout", destroy_user_session_path, method: :delete %></text>
+              </a>
+            </p>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+
+
+<h1>Active Proposals</h1>
+<%= flash[:alert] %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th>Group Type</th>
+  </tr>
+ 
+  <% @proposals.each do |proposal| %>
+    <tr>
+      <td><%= proposal.title %></td>
+      <td><%= proposal.text %></td>
+       <td><%= proposal.role.name %></td>
+     <td><%= link_to 'Show', proposal_path(proposal) %></td>
+      <% if can? :update, proposal %>
+      <td><%= link_to 'Edit', edit_proposal_path(proposal) %></td>
+      <% end %>
+      <% if can? :destroy, proposal %>
+      <td><%= link_to 'Delete', proposal_path(proposal),
+                    method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Home', welcome_index_path %>
+| <%= link_to 'New Proposal', "new_proposal" %>

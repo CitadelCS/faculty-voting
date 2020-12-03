@@ -1,0 +1,71 @@
+<%= render 'navbar' %> 
+  <div class="home-logo-div">
+    <%= image_tag("proposal-banner.png",  :size => "325x108", :alt => "rss feed") %>
+  </div>
+    
+  <div class="proposal-home-text">
+    <h4 style="font-weight: bold;">Proposal System Home</h4>  
+  </div>
+    
+  <div>
+    <table style="color:black;background-color:#f2f2f2;width:100%;">
+      <tbody>
+        <tr>
+          <td>
+            <p>Welcome <%= current_user.email %></p>
+          </td>
+          <td>
+            <p align="right" class="logout-msg">
+              <a id="logout" style="text-decoration:none;color:black;:hover:#fff;" href="#">
+                  <%= link_to image_tag("logout_roll.gif",  :size => "39x26", :alt => "rss feed2"), destroy_user_session_path, method: :delete %> 
+                  <br>
+                  <text class="logout-text" style="color:black;"><%= link_to "Logout", destroy_user_session_path, method: :delete %></text>
+              </a>
+            </p>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+<h1>Editing Proposal</h1>
+ 
+<%= form_for @proposal do |f| %>
+  <% if @proposal.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@proposal.errors.count, "error") %> prohibited
+      this proposal from being saved:</h2>
+    <ul>
+    <% @proposal.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+  </p>
+ 
+  <p>
+    <%= f.label :group_type %><br>
+    <%= f.collection_select :role_id, @roles, :id, :name, prompt: true  %>
+  </p>
+
+  <p>
+
+  </p>
+    <%= f.label "Archive Proposal" %> <br>
+    <%= f.check_box :archived %>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+ 
+<%= link_to 'Back', proposals_path %>

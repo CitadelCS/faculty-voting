@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      
+    <title>Faculty Voting</title>
+       <div class="home-logo-div">
+    <%= image_tag("proposal-banner.png",  :size => "325x108", :alt => "rss feed") %>
+  </div>
+    
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <h1>Welcome to The Faculty Voting System!</h1>
+    <%= yield %>
+  </body>
+</html>
