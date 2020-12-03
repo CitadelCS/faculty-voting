@@ -21,7 +21,7 @@ When I fill in "Description" with "Owner"
 When I press "Create Role" 
 When I follow "Back"
 When I follow "Home"
-When I follow "PROG USER"
+When I follow "PROGRAM USER"
 When I follow "New Prog User"
 When I select option 1 from @user
 When I press "Create Prog user"
