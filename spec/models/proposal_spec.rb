@@ -17,9 +17,9 @@ RSpec.describe Proposal, type: :model do
       proposal = Proposal.new(title: 'Test Proposal', text: 'This is a sample proposal.', group_type: 'a').save
       expect(proposal).to eq(false)
     end
-    it 'should save successfully' do
+    it 'should not save successfully' do
       proposal = Proposal.new(title: 'Test Proposal', text: 'This is a test proposal').save
-      expect(proposal).to eq(true)
+      expect(proposal).to eq(false)
     end
   end
 end
