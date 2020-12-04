@@ -83,7 +83,7 @@ class ProposalsController < ApplicationController
     
     def destroy
       @proposal = Proposal.find(params[:id])
-      authoize! :update, @proposal
+      authorize! :update, @proposal
       @proposal.destroy
  
       redirect_to proposals_path
